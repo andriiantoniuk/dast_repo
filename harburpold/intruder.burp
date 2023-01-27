@@ -1,0 +1,91 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="1.4.01" exportTime="Thu Apr 18 13:18:07 EDT 2013">
+  <item>
+    <time>Thu Apr 18 13:17:31 EDT 2013</time>
+    <url><![CDATA[https://ofbiz.spidynamics.com:8443/ecommerce/products/PROMOTIONS/p_ENCHILADAS]]></url>
+    <host ip="172.16.10.171">ofbiz.spidynamics.com</host>
+    <port>8443</port>
+    <protocol>https</protocol>
+    <method>GET</method>
+    <path><![CDATA[/ecommerce/products/PROMOTIONS/p_ENCHILADAS]]></path>
+    <extension>null</extension>
+    <request><![CDATA[GET /ecommerce/products/PROMOTIONS/p_ENCHILADAS HTTP/1.1
+Host: ofbiz.spidynamics.com:8443
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)
+Connection: close
+
+]]></request>
+    <status>302</status>
+    <responselength>413</responselength>
+    <mimetype></mimetype>
+    <response><![CDATA[HTTP/1.1 302 Moved Temporarily
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=A8895FED08CD46A9C197EB3F2E327906.jvm1; Path=/ecommerce; Secure
+Set-Cookie: OFBiz.Visitor=10040; Expires=Fri, 18-Apr-2014 17:15:25 GMT; Path=/
+Location: http://ofbiz.spidynamics.com:8080/ecommerce/control/product
+Content-Type: text/html;charset=UTF-8
+Content-Length: 0
+Date: Thu, 18 Apr 2013 17:15:25 GMT
+Connection: close
+
+]]></response>
+    <comment><![CDATA[baseline request]]></comment>
+  </item>
+  <item>
+    <time>Thu Apr 18 13:17:32 EDT 2013</time>
+    <url><![CDATA[https://ofbiz.spidynamics.com:8443/ecommerce/products/PROMOTIONS/asdf]]></url>
+    <host ip="172.16.10.171">ofbiz.spidynamics.com</host>
+    <port>8443</port>
+    <protocol>https</protocol>
+    <method>GET</method>
+    <path><![CDATA[/ecommerce/products/PROMOTIONS/asdf]]></path>
+    <extension>null</extension>
+    <request><![CDATA[GET /ecommerce/products/PROMOTIONS/asdf HTTP/1.1
+Host: ofbiz.spidynamics.com:8443
+Accept: */*
+Accept-Language: en
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)
+Connection: close
+
+]]></request>
+    <status>302</status>
+    <responselength>414</responselength>
+    <mimetype></mimetype>
+    <response><![CDATA[HTTP/1.1 302 Moved Temporarily
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=10406BD1AEA165EB8DB439A3D76B8D5E.jvm1; Path=/ecommerce; Secure
+Set-Cookie: OFBiz.Visitor=10041; Expires=Fri, 18-Apr-2014 17:15:26 GMT; Path=/
+Location: http://ofbiz.spidynamics.com:8080/ecommerce/control/category
+Content-Type: text/html;charset=UTF-8
+Content-Length: 0
+Date: Thu, 18 Apr 2013 17:15:25 GMT
+Connection: close
+
+]]></response>
+    <comment></comment>
+  </item>
+</items>

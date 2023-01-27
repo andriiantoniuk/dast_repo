@@ -1,0 +1,57 @@
+<?xml version="1.1"?>
+<!-- NOTE: Any NULL bytes in requests and responses are preserved within this output, even though this strictly breaks the XML syntax. If your XML parser rejects the NULL bytes then you will need to remove or replace these bytes before parsing. -->
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="1.4.01" exportTime="Thu Apr 18 13:09:22 EDT 2013">
+  <item>
+    <time>Thu Apr 18 13:09:09 EDT 2013</time>
+    <url><![CDATA[http://apache-defect/jbrooks/]]></url>
+    <host ip="172.16.53.112">apache-defect</host>
+    <port>80</port>
+    <protocol>http</protocol>
+    <method>GET</method>
+    <path><![CDATA[/jbrooks/]]></path>
+    <extension>null</extension>
+    <request><![CDATA[GET /jbrooks/ HTTP/1.1
+Host: apache-defect X-WIPP: AscVersion="1.2.3.4"
+Proxy-Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.64 Safari/537.31
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: en-US,en;q=0.8
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.3
+
+]]></request>
+    <status>200</status>
+    <responselength>3454</responselength>
+    <mimetype>HTML</mimetype>
+    <response><![CDATA[HTTP/1.1 200 OK
+Date: Thu, 18 Apr 2013 17:05:27 GMT
+Server: Apache/2.2.8 (Ubuntu) mod_python/3.3.1 Python/2.5.2 PHP/5.2.4-2ubuntu5.19 with Suhosin-Patch mod_ssl/2.2.8 OpenSSL/0.9.8g
+X-Powered-By: PHP/5.2.4-2ubuntu5.19
+Content-Length: 3168
+Content-Type: text/html; charset=UTF-8
+
+<b><a href='reqmod10735'>reqmod10735</a></b><br /><b><a href='forum'>forum</a></b><br /><b><a href='infinity'>infinity</a></b><br /><b><a href='infinity-js'>infinity-js</a></b><br /><b><a href='.svn'>.svn</a></b><br /><b><a href='checks'>checks</a></b><br /><b><a href='formquote'>formquote</a></b><br /><b><a href='ssn'>ssn</a></b><br /><b><a href='mimetype'>mimetype</a></b><br /><b><a href='macro'>macro</a></b><br /><b><a href='test.php'>test.php</a></b><br /><b><a href='excludedHosts'>excludedHosts</a></b><br /><b><a href='rewrite'>rewrite</a></b><br /><b><a href='twosubmits'>twosubmits</a></b><br /><b><a href='postGet500'>postGet500</a></b><br /><b><a href='exclusion'>exclusion</a></b><br /><b><a href='fixvuln'>fixvuln</a></b><br /><b><a href='timeout'>timeout</a></b><br /><b><a href='check3508'>check3508</a></b><br /><b><a href='challenge'>challenge</a></b><br /><b><a href='testfp'>testfp</a></b><br /><b><a href='reload'>reload</a></b><br /><b><a href='no-script'>no-script</a></b><br /><b><a href='pacms'>pacms</a></b><br /><b><a href='script'>script</a></b><br /><b><a href='stickysession'>stickysession</a></b><br /><b><a href='extensions'>extensions</a></b><br /><b><a href='verizon'>verizon</a></b><br /><b><a href='base64'>base64</a></b><br /><b><a href='webformpsa'>webformpsa</a></b><br /><b><a href='sitesearch'>sitesearch</a></b><br /><b><a href='scriptincludes'>scriptincludes</a></b><br /><b><a href='iframe'>iframe</a></b><br /><b><a href='sessiontermination'>sessiontermination</a></b><br /><b><a href='underscore'>underscore</a></b><br /><b><a href='iframesniff'>iframesniff</a></b><br /><b><a href='xssfp'>xssfp</a></b><br /><b><a href='ing'>ing</a></b><br /><b><a href='jquerymobile'>jquerymobile</a></b><br /><b><a href='snapfish'>snapfish</a></b><br /><b><a href='passive'>passive</a></b><br /><b><a href='websphere'>websphere</a></b><br /><b><a href='cookiexss'>cookiexss</a></b><br /><b><a href='cycle'>cycle</a></b><br /><b><a href='xframeoptions'>xframeoptions</a></b><br /><b><a href='shapingdixon'>shapingdixon</a></b><br /><b><a href='customparamextattacks'>customparamextattacks</a></b><br /><b><a href='redirecthost'>redirecthost</a></b><br /><b><a href='silverlightsteve'>silverlightsteve</a></b><br /><b><a href='creditcard'>creditcard</a></b><br /><b><a href='securecookie'>securecookie</a></b><br /><b><a href='index.php'>index.php</a></b><br /><b><a href='stricthttps'>stricthttps</a></b><br /><b><a href='spicert.pem'>spicert.pem</a></b><br /><b><a href='hex.php'>hex.php</a></b><br /><b><a href='spicert.pfx'>spicert.pfx</a></b><br /><b><a href='FiddlerRoot.cer'>FiddlerRoot.cer</a></b><br /><b><a href='spicert.crt'>spicert.crt</a></b><br /><b><a href='fiddler.cer'>fiddler.cer</a></b><br /><b><a href='spiroot.cer'>spiroot.cer</a></b><br /><b><a href='domxss'>domxss</a></b><br /><b><a href='checkboxfail'>checkboxfail</a></b><br /><b><a href='profiler'>profiler</a></b><br /><b><a href='errFnF'>errFnF</a></b><br /><b><a href='json'>json</a></b><br /><b><a href='xss303'>xss303</a></b><br /><b><a href='ccn'>ccn</a></b><br /><b><a href='subparams'>subparams</a></b><br /><b><a href='hashnav'>hashnav</a></b><br />]]></response>
+    <comment>this is a comment</comment>
+  </item>
+</items>
