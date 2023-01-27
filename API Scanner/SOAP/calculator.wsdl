@@ -1,0 +1,765 @@
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.w3.org/ns/wsdl" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.w3.org/ns/wsdl">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://www.w3.org/ns/wsdl">
+<s:import namespace="http://microsoft.com/wsdl/types/"/>
+<s:element name="Calculator_Add">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="A" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="B" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Calculator_AddResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Calculator_AddResult" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Calculator_Subtract">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="A" type="s:float"/>
+<s:element minOccurs="1" maxOccurs="1" name="B" type="s:float"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Calculator_SubtractResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Calculator_SubtractResult" type="s:float"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Calculator_Multiply">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="A" type="s:float"/>
+<s:element minOccurs="1" maxOccurs="1" name="B" type="s:float"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Calculator_MultiplyResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Calculator_MultiplyResult" type="s:float"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Calculator_Divide">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="A" type="s:float"/>
+<s:element minOccurs="1" maxOccurs="1" name="B" type="s:float"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Calculator_DivideResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Calculator_DivideResult" type="s:float"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="SayHello">
+<s:complexType/>
+</s:element>
+<s:element name="SayHelloResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="SayHelloResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method1">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="arg1" type="tns:Yana"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Yana">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="StringProperty" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="Method1Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Method1Result" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method2">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="arg2" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method2Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Method2Result" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method3">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="arg3" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method3Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Method3Result" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method4">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="aBool" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="bBool" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method4Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Method4Result" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method5">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="aBool2" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method5Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Method5Result" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method6">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="aF" type="s:double"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method6Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Method6Result" type="s:double"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method7">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="aarr" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="barr" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="carr" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method7Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Method7Result" type="tns:ArrayOfInt"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfInt">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:element name="Method8">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="aarr1" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="barr1" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="carr1" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method8Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Method8Result" type="tns:ArrayOfString"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfString">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="Method9">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="alist" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="blist" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="clist" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="Method9Response">
+<s:complexType/>
+</s:element>
+<s:element name="Method999">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="arg10" type="tns:Yana2"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="Yana2">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="aa" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:element name="Method999Response">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="Method999Result" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="MethodDateTime">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="dateParameter" type="s:dateTime"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="MethodDateTimeResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="MethodDateTimeResult" type="s:dateTime"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="MethodChar">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="charParameter" type="s1:char"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="MethodCharResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="MethodCharResult" type="s1:char"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+</s:schema>
+<s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+<s:simpleType name="char">
+<s:restriction base="s:unsignedShort"/>
+</s:simpleType>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="Calculator_AddSoapIn">
+<wsdl:part name="parameters" element="tns:Calculator_Add"/>
+</wsdl:message>
+<wsdl:message name="Calculator_AddSoapOut">
+<wsdl:part name="parameters" element="tns:Calculator_AddResponse"/>
+</wsdl:message>
+<wsdl:message name="Calculator_SubtractSoapIn">
+<wsdl:part name="parameters" element="tns:Calculator_Subtract"/>
+</wsdl:message>
+<wsdl:message name="Calculator_SubtractSoapOut">
+<wsdl:part name="parameters" element="tns:Calculator_SubtractResponse"/>
+</wsdl:message>
+<wsdl:message name="Calculator_MultiplySoapIn">
+<wsdl:part name="parameters" element="tns:Calculator_Multiply"/>
+</wsdl:message>
+<wsdl:message name="Calculator_MultiplySoapOut">
+<wsdl:part name="parameters" element="tns:Calculator_MultiplyResponse"/>
+</wsdl:message>
+<wsdl:message name="Calculator_DivideSoapIn">
+<wsdl:part name="parameters" element="tns:Calculator_Divide"/>
+</wsdl:message>
+<wsdl:message name="Calculator_DivideSoapOut">
+<wsdl:part name="parameters" element="tns:Calculator_DivideResponse"/>
+</wsdl:message>
+<wsdl:message name="SayHelloSoapIn">
+<wsdl:part name="parameters" element="tns:SayHello"/>
+</wsdl:message>
+<wsdl:message name="SayHelloSoapOut">
+<wsdl:part name="parameters" element="tns:SayHelloResponse"/>
+</wsdl:message>
+<wsdl:message name="Method1SoapIn">
+<wsdl:part name="parameters" element="tns:Method1"/>
+</wsdl:message>
+<wsdl:message name="Method1SoapOut">
+<wsdl:part name="parameters" element="tns:Method1Response"/>
+</wsdl:message>
+<wsdl:message name="Method2SoapIn">
+<wsdl:part name="parameters" element="tns:Method2"/>
+</wsdl:message>
+<wsdl:message name="Method2SoapOut">
+<wsdl:part name="parameters" element="tns:Method2Response"/>
+</wsdl:message>
+<wsdl:message name="Method3SoapIn">
+<wsdl:part name="parameters" element="tns:Method3"/>
+</wsdl:message>
+<wsdl:message name="Method3SoapOut">
+<wsdl:part name="parameters" element="tns:Method3Response"/>
+</wsdl:message>
+<wsdl:message name="Method4SoapIn">
+<wsdl:part name="parameters" element="tns:Method4"/>
+</wsdl:message>
+<wsdl:message name="Method4SoapOut">
+<wsdl:part name="parameters" element="tns:Method4Response"/>
+</wsdl:message>
+<wsdl:message name="Method5SoapIn">
+<wsdl:part name="parameters" element="tns:Method5"/>
+</wsdl:message>
+<wsdl:message name="Method5SoapOut">
+<wsdl:part name="parameters" element="tns:Method5Response"/>
+</wsdl:message>
+<wsdl:message name="Method6SoapIn">
+<wsdl:part name="parameters" element="tns:Method6"/>
+</wsdl:message>
+<wsdl:message name="Method6SoapOut">
+<wsdl:part name="parameters" element="tns:Method6Response"/>
+</wsdl:message>
+<wsdl:message name="Method7SoapIn">
+<wsdl:part name="parameters" element="tns:Method7"/>
+</wsdl:message>
+<wsdl:message name="Method7SoapOut">
+<wsdl:part name="parameters" element="tns:Method7Response"/>
+</wsdl:message>
+<wsdl:message name="Method8SoapIn">
+<wsdl:part name="parameters" element="tns:Method8"/>
+</wsdl:message>
+<wsdl:message name="Method8SoapOut">
+<wsdl:part name="parameters" element="tns:Method8Response"/>
+</wsdl:message>
+<wsdl:message name="Method9SoapIn">
+<wsdl:part name="parameters" element="tns:Method9"/>
+</wsdl:message>
+<wsdl:message name="Method9SoapOut">
+<wsdl:part name="parameters" element="tns:Method9Response"/>
+</wsdl:message>
+<wsdl:message name="Method999SoapIn">
+<wsdl:part name="parameters" element="tns:Method999"/>
+</wsdl:message>
+<wsdl:message name="Method999SoapOut">
+<wsdl:part name="parameters" element="tns:Method999Response"/>
+</wsdl:message>
+<wsdl:message name="MethodDateTimeSoapIn">
+<wsdl:part name="parameters" element="tns:MethodDateTime"/>
+</wsdl:message>
+<wsdl:message name="MethodDateTimeSoapOut">
+<wsdl:part name="parameters" element="tns:MethodDateTimeResponse"/>
+</wsdl:message>
+<wsdl:message name="MethodCharSoapIn">
+<wsdl:part name="parameters" element="tns:MethodChar"/>
+</wsdl:message>
+<wsdl:message name="MethodCharSoapOut">
+<wsdl:part name="parameters" element="tns:MethodCharResponse"/>
+</wsdl:message>
+<wsdl:portType name="FirstServiceSoap">
+<wsdl:operation name="Calculator_Add">
+<wsdl:input message="tns:Calculator_AddSoapIn"/>
+<wsdl:output message="tns:Calculator_AddSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Calculator_Subtract">
+<wsdl:input message="tns:Calculator_SubtractSoapIn"/>
+<wsdl:output message="tns:Calculator_SubtractSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Calculator_Multiply">
+<wsdl:input message="tns:Calculator_MultiplySoapIn"/>
+<wsdl:output message="tns:Calculator_MultiplySoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Calculator_Divide">
+<wsdl:input message="tns:Calculator_DivideSoapIn"/>
+<wsdl:output message="tns:Calculator_DivideSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="SayHello">
+<wsdl:input message="tns:SayHelloSoapIn"/>
+<wsdl:output message="tns:SayHelloSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Method1">
+<wsdl:input message="tns:Method1SoapIn"/>
+<wsdl:output message="tns:Method1SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Method2">
+<wsdl:input message="tns:Method2SoapIn"/>
+<wsdl:output message="tns:Method2SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Method3">
+<wsdl:input message="tns:Method3SoapIn"/>
+<wsdl:output message="tns:Method3SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Method4">
+<wsdl:input message="tns:Method4SoapIn"/>
+<wsdl:output message="tns:Method4SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Method5">
+<wsdl:input message="tns:Method5SoapIn"/>
+<wsdl:output message="tns:Method5SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Method6">
+<wsdl:input message="tns:Method6SoapIn"/>
+<wsdl:output message="tns:Method6SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Method7">
+<wsdl:input message="tns:Method7SoapIn"/>
+<wsdl:output message="tns:Method7SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Method8">
+<wsdl:input message="tns:Method8SoapIn"/>
+<wsdl:output message="tns:Method8SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Method9">
+<wsdl:input message="tns:Method9SoapIn"/>
+<wsdl:output message="tns:Method9SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="Method999">
+<wsdl:input message="tns:Method999SoapIn"/>
+<wsdl:output message="tns:Method999SoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="MethodDateTime">
+<wsdl:input message="tns:MethodDateTimeSoapIn"/>
+<wsdl:output message="tns:MethodDateTimeSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="MethodChar">
+<wsdl:input message="tns:MethodCharSoapIn"/>
+<wsdl:output message="tns:MethodCharSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="FirstServiceSoap" type="tns:FirstServiceSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Calculator_Add">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Calculator_Add" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Calculator_Subtract">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Calculator_Subtract" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Calculator_Multiply">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Calculator_Multiply" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Calculator_Divide">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Calculator_Divide" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SayHello">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/SayHello" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method1">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Method1" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method2">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Method2" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method3">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Method3" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method4">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Method4" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method5">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Method5" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method6">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Method6" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method7">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Method7" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method8">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Method8" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method9">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Method9" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method999">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/Method999" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="MethodDateTime">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/MethodDateTime" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="MethodChar">
+<soap:operation soapAction="http://www.w3.org/ns/wsdl/MethodChar" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="FirstServiceSoap12" type="tns:FirstServiceSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="Calculator_Add">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Calculator_Add" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Calculator_Subtract">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Calculator_Subtract" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Calculator_Multiply">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Calculator_Multiply" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Calculator_Divide">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Calculator_Divide" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="SayHello">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/SayHello" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method1">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Method1" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method2">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Method2" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method3">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Method3" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method4">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Method4" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method5">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Method5" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method6">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Method6" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method7">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Method7" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method8">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Method8" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method9">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Method9" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="Method999">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/Method999" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="MethodDateTime">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/MethodDateTime" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="MethodChar">
+<soap12:operation soapAction="http://www.w3.org/ns/wsdl/MethodChar" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="FirstService">
+<wsdl:port name="FirstServiceSoap" binding="tns:FirstServiceSoap">
+<soap:address location="http://172.16.10.161:9010/SOAPBasicAuth/calculator.asmx"/>
+</wsdl:port>
+<wsdl:port name="FirstServiceSoap12" binding="tns:FirstServiceSoap12">
+<soap12:address location="http://172.16.10.161:9010/SOAPBasicAuth/calculator.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

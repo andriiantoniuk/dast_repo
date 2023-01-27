@@ -1,0 +1,32 @@
+{
+  "Proxy": null,
+  "AuthProviders": [
+    {
+      "Type": "TRANSPORT_AUTHORIZATION",
+      "Header": null,
+      "Name": "CustomScheme",
+      "Value": "CustomParameter",
+      "Username": null,
+      "Password": null,
+      "RestrictToEndpoint": null,
+      "UsernameToken": null,
+      "WSAddressing": null,
+      "ClientCertificate": null,
+      "ServerCertificate": null,
+      "Fetch": null
+    }
+  ],
+  "APIDefinition": "http://172.16.10.161:90/VerySimpleSOAP/calculator.asmx?WSDL",
+  "ExcludeOperations": null,
+  "IncludeOperations": null,
+  "ExcludeHTTPMethods": null,
+  "PreferredContentType": null,
+  "Schemes": [
+    "http"
+  ],
+  "Host": "172.16.10.161:90",
+  "ServicePath": "/VerySimpleSOAP/calculator.asmx",
+  "ParameterRules": [],
+  "Type": "SOAP",
+  "APIVersion": "Newest"
+}

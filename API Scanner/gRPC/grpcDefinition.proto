@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "SomeKindaAPI";
+
+package client;
+
+service Clients
+{
+	rpc GetClients(ClientRequest) returns (stream Client);
+
+	rpc GetClient(ClientRequest) returns (Client);
+}
+
+message ClientRequest {
+	int32 id = 1;
+}
+
+message Client {
+	int32 id = 1;
+	string first_name = 2;
+	string last_name = 3;
+}

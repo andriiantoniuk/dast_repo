@@ -1,0 +1,17 @@
+{
+  "AuthProviders": [
+    {
+      "Type": "TRANSPORT_NTLM",
+      "Username": "administrator",
+      "Password": "SPI!password",
+    }
+  ],
+  "APIDefinition": "http://172.16.10.115:9011/SOAPntlmAuth/calculator.asmx?WSDL",
+  "Schemes": [
+    "http"
+  ],
+  "Host": "172.16.10.115:9011",
+  "ServicePath": "/SOAPntlmAuth/calculator.asmx",
+  "Type": "SOAP",
+  "APIVersion": "Newest"
+}

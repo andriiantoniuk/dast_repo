@@ -1,0 +1,20 @@
+{
+  "APIDefinition": "http://172.16.10.115:90/VerySimpleSOAP/calculator.asmx?WSDL",
+  "Schemes": [
+    "http"
+  ],
+  "Host": "172.16.10.115:90",
+  "ServicePath": "/VerySimpleSOAP/calculator.asmx",
+  "ParameterRules": [
+    {
+      "Name": "dateParameter",
+      "Value": "12/22/2022 4:00:00 AM",
+      "Location": "Body",
+      "Type": "Date",
+      "Inject": false,
+      "Base64Decode": false
+    }
+  ],
+  "Type": "SOAP",
+  "APIVersion": "Newest"
+}

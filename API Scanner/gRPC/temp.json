@@ -1,0 +1,12 @@
+{
+  "AuthProviders": null,
+  "APIDefinition": "http://172.16.10.115:90/VerySimpleSOAP/calculator.asmx?WSDL",
+  "Schemes": [
+    "http"
+  ],
+  "Host": "172.16.10.115:90",
+  "ServicePath": "/VerySimpleSOAP/calculator.asmx",
+  "Type": "SOAP",
+  "APIVersion": "Newest",
+  "ExcludeHTTPMethod":  ["GET", "PUT"] 
+}

@@ -1,0 +1,10 @@
+{
+  "APIDefinition": "http://172.16.10.180:5000/test/client.txt",
+  "Schemes": [
+    "https"
+  ],
+  "Host": "172.16.10.151:5002",
+  "ServicePath": "/",
+  "Type": "gRPC",
+  "APIVersion": "Newest"
+}

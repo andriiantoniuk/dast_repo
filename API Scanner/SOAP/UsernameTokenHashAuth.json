@@ -1,0 +1,26 @@
+{
+  "AuthProviders": [
+    {
+      "Type": "MESSAGE_USERNAMETOKEN",
+      "Username": "admin",
+      "Password": "admin",
+      "UsernameToken": {
+        "Type": "HASH",
+        "TimeStamp": "FULL",
+        "IncludeNonce": true
+      },
+      "WSAddressing": {
+        "Version": "WSA_0408",
+        "To": "http://auto-labs04.spidynamics.com:8080/asmx-001/service.asmx"
+      }
+    }
+  ],
+  "APIDefinition": "http://auto-labs04.spidynamics.com:8080/asmx-001/service.asmx?WSDL",
+  "Schemes": [
+    "http"
+  ],
+  "Host": "auto-labs04.spidynamics.com:8080",
+  "ServicePath": "/asmx-001/service.asmx",
+  "Type": "SOAP",
+  "APIVersion": "Mixed"
+}

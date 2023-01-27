@@ -1,0 +1,13 @@
+{
+  "APIDefinition": "syntax = \"proto3\";\r\npackage catalogpb;\r\noption go_package=\"./;catalogpb\";\r\n\r\n\r\nmessage CatalogItem{\r\n    string id = 1;\r\n    string name = 2;\r\n    string details = 3;\r\n    string availability = 4;\r\n    int64 total_orders = 5;\r\n    int64 average_cost = 6;\r\n}\r\n\r\nmessage GetItemsRequest {\r\n}\r\n\r\nmessage GetItemsResponse {\r\n    repeated CatalogItem item = 1;\r\n}\r\n\r\nmessage GetItemRequest {\r\n    string id = 1;\r\n}\r\n\r\nmessage GetItemResponse {\r\n    CatalogItem item = 1;\r\n}\r\n\r\nmessage UpdateItemRequest {\r\n    string id = 1;\r\n    int64 latest_cost = 2;\r\n}\r\n\r\nmessage UpdateItemResponse {\r\n}\r\n\r\nservice Catalog{\r\n    rpc GetItem(GetItemRequest) returns (GetItemResponse) {};\r\n    rpc GetItems(GetItemsRequest) returns (GetItemsResponse) {};\r\n    rpc UpdateItem(UpdateItemRequest) returns (UpdateItemResponse) {};\r\n}",
+  "IncludeOperations": [
+    "UpdateItem"
+  ],
+  "Schemes": [
+    "https"
+  ],
+  "Host": "172.16.10.82:55050",
+  "ServicePath": "/",
+  "Type": "gRPC",
+  "APIVersion": "Newest"
+}

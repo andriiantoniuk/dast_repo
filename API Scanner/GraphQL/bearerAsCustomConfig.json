@@ -1,0 +1,16 @@
+{
+  "AuthProviders": [
+    {
+      "Type": "TRANSPORT_AUTHORIZATION",
+      "Name": "Bearer",
+      "Value": "pasteYourTokenHere"
+    }
+  ],
+  "APIDefinition": "http://172.16.10.82:4012/graphql",
+  "Schemes": [
+    "http"
+  ],
+  "Host": "172.16.10.82:4012",
+  "ServicePath": "/graphql",
+  "Type": "GraphQL"
+}

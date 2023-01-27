@@ -1,0 +1,14 @@
+{
+    "APIDefinition": "http://172.16.10.129:8081/VerySimpleSOAP/calculator.asmx?WSDL",
+    "Type": "SOAP",
+    "Schemes": [ "http" ],
+    "Host": "172.16.10.129:8081",
+	"ServicePath": "/VerySimpleSOAP/calculator.asmx",
+    "APIVersion": "Newest",
+    "AuthProviders": [{
+			"Type": "TRANSPORT_DIGEST",
+			"Username": "digest",
+			"Password": "digest"
+        }
+    ]
+}

@@ -1,0 +1,536 @@
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.hp.com/asc/zerows" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.hp.com/asc/zerows">
+<wsdl:types>
+<s:schema elementFormDefault="qualified" targetNamespace="http://www.hp.com/asc/zerows">
+<s:element name="LinkToTestingDocumentation">
+<s:complexType/>
+</s:element>
+<s:element name="LinkToTestingDocumentationResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="LinkToTestingDocumentationResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="ListTestAccounts">
+<s:complexType/>
+</s:element>
+<s:element name="ListTestAccountsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="ListTestAccountsResult" type="tns:ArrayOfListTestAccountsResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfListTestAccountsResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="ListTestAccountsResponse" nillable="true" type="tns:ListTestAccountsResponse"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ListTestAccountsResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="CustomerPin" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Accounts" type="tns:ArrayOfAcctInfo"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfAcctInfo">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="AcctInfo" nillable="true" type="tns:AcctInfo"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="AcctInfo">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="Number" type="s:long"/>
+<s:element minOccurs="1" maxOccurs="1" name="Balance" type="s:double"/>
+</s:sequence>
+</s:complexType>
+<s:element name="IsValidCustomer">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="name" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="pin" type="s:int"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="IsValidCustomerResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="IsValidCustomerResult" type="s:boolean"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="GetCustomerAccounts">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="creds" type="tns:ArrayOfCustomerCredentials"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfCustomerCredentials">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="CustomerCredentials" nillable="true" type="tns:CustomerCredentials"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="CustomerCredentials">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="Pin" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:element name="GetCustomerAccountsResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="GetCustomerAccountsResult" type="tns:ArrayOfGetCustAcctsResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfGetCustAcctsResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="GetCustAcctsResponse" nillable="true" type="tns:GetCustAcctsResponse"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="GetCustAcctsResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Customer" type="tns:Customer"/>
+<s:element minOccurs="0" maxOccurs="1" name="Accounts" type="tns:ArrayOfAcctInfo"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="Customer">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="Pin" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="City" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="State" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="Zip" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string"/>
+</s:sequence>
+</s:complexType>
+<s:element name="CloseAccount">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="name" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="pin" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="acctNum" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CloseAccountResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="CloseAccountResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddAccount">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="name" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="pin" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="acctType" type="tns:AccountType"/>
+<s:element minOccurs="0" maxOccurs="1" name="sourceInfo" type="tns:FundingInfo"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:simpleType name="AccountType">
+<s:restriction base="s:string">
+<s:enumeration value="Checking"/>
+<s:enumeration value="Savings"/>
+<s:enumeration value="IRA"/>
+</s:restriction>
+</s:simpleType>
+<s:complexType name="FundingInfo">
+<s:sequence>
+<s:choice minOccurs="1" maxOccurs="1">
+<s:element minOccurs="0" maxOccurs="1" name="Internal" type="tns:InternalSourceInfo"/>
+<s:element minOccurs="0" maxOccurs="1" name="External" type="tns:ExternalSourceInfo"/>
+</s:choice>
+</s:sequence>
+</s:complexType>
+<s:complexType name="InternalSourceInfo">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="AcctNum" type="s:long"/>
+<s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ExternalSourceInfo">
+<s:complexContent mixed="false">
+<s:extension base="tns:InternalSourceInfo">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="RoutingNum" type="s:string"/>
+</s:sequence>
+</s:extension>
+</s:complexContent>
+</s:complexType>
+<s:element name="AddAccountResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="AddAccountResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="InternalFundsTransfer">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="name" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="pin" type="s:int"/>
+<s:element minOccurs="1" maxOccurs="1" name="debitAcctNum" type="s:long"/>
+<s:element minOccurs="1" maxOccurs="1" name="creditAcctNum" type="s:long"/>
+<s:element minOccurs="1" maxOccurs="1" name="amount" type="s:double"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="InternalFundsTransferResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="InternalFundsTransferResult" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="AddCustomerRecord">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="jointAcct" type="s:boolean"/>
+<s:element minOccurs="0" maxOccurs="1" name="custInfo" type="tns:CustomerInfo"/>
+<s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="pinConfirm" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="CustomerInfo">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Address" type="tns:CustAddress"/>
+<s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="SecondaryCust" type="tns:CustomerInfo"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="CustAddress">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="City" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="State" type="s:string"/>
+<s:element minOccurs="1" maxOccurs="1" name="Zip" type="s:int"/>
+</s:sequence>
+</s:complexType>
+<s:element name="AddCustomerRecordResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="AddCustomerRecordResult" type="tns:AddCustRecResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="AddCustRecResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="CustomerInfo" type="tns:CustomerInfo"/>
+</s:sequence>
+</s:complexType>
+<s:element name="CustomerSearch">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="custId" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="custName" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="acctNumber" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="balance" type="s:string"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:element name="CustomerSearchResponse">
+<s:complexType>
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="1" name="CustomerSearchResult" type="tns:ArrayOfCustSearchResponse"/>
+</s:sequence>
+</s:complexType>
+</s:element>
+<s:complexType name="ArrayOfCustSearchResponse">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="CustSearchResponse" nillable="true" type="tns:CustSearchResponse"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="CustSearchResponse">
+<s:sequence>
+<s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int"/>
+<s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string"/>
+<s:element minOccurs="0" maxOccurs="1" name="AccountIDs" type="tns:ArrayOfLong"/>
+</s:sequence>
+</s:complexType>
+<s:complexType name="ArrayOfLong">
+<s:sequence>
+<s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long"/>
+</s:sequence>
+</s:complexType>
+</s:schema>
+</wsdl:types>
+<wsdl:message name="LinkToTestingDocumentationSoapIn">
+<wsdl:part name="parameters" element="tns:LinkToTestingDocumentation"/>
+</wsdl:message>
+<wsdl:message name="LinkToTestingDocumentationSoapOut">
+<wsdl:part name="parameters" element="tns:LinkToTestingDocumentationResponse"/>
+</wsdl:message>
+<wsdl:message name="ListTestAccountsSoapIn">
+<wsdl:part name="parameters" element="tns:ListTestAccounts"/>
+</wsdl:message>
+<wsdl:message name="ListTestAccountsSoapOut">
+<wsdl:part name="parameters" element="tns:ListTestAccountsResponse"/>
+</wsdl:message>
+<wsdl:message name="IsValidCustomerSoapIn">
+<wsdl:part name="parameters" element="tns:IsValidCustomer"/>
+</wsdl:message>
+<wsdl:message name="IsValidCustomerSoapOut">
+<wsdl:part name="parameters" element="tns:IsValidCustomerResponse"/>
+</wsdl:message>
+<wsdl:message name="GetCustomerAccountsSoapIn">
+<wsdl:part name="parameters" element="tns:GetCustomerAccounts"/>
+</wsdl:message>
+<wsdl:message name="GetCustomerAccountsSoapOut">
+<wsdl:part name="parameters" element="tns:GetCustomerAccountsResponse"/>
+</wsdl:message>
+<wsdl:message name="CloseAccountSoapIn">
+<wsdl:part name="parameters" element="tns:CloseAccount"/>
+</wsdl:message>
+<wsdl:message name="CloseAccountSoapOut">
+<wsdl:part name="parameters" element="tns:CloseAccountResponse"/>
+</wsdl:message>
+<wsdl:message name="AddAccountSoapIn">
+<wsdl:part name="parameters" element="tns:AddAccount"/>
+</wsdl:message>
+<wsdl:message name="AddAccountSoapOut">
+<wsdl:part name="parameters" element="tns:AddAccountResponse"/>
+</wsdl:message>
+<wsdl:message name="InternalFundsTransferSoapIn">
+<wsdl:part name="parameters" element="tns:InternalFundsTransfer"/>
+</wsdl:message>
+<wsdl:message name="InternalFundsTransferSoapOut">
+<wsdl:part name="parameters" element="tns:InternalFundsTransferResponse"/>
+</wsdl:message>
+<wsdl:message name="AddCustomerRecordSoapIn">
+<wsdl:part name="parameters" element="tns:AddCustomerRecord"/>
+</wsdl:message>
+<wsdl:message name="AddCustomerRecordSoapOut">
+<wsdl:part name="parameters" element="tns:AddCustomerRecordResponse"/>
+</wsdl:message>
+<wsdl:message name="CustomerSearchSoapIn">
+<wsdl:part name="parameters" element="tns:CustomerSearch"/>
+</wsdl:message>
+<wsdl:message name="CustomerSearchSoapOut">
+<wsdl:part name="parameters" element="tns:CustomerSearchResponse"/>
+</wsdl:message>
+<wsdl:portType name="WebServiceSoap">
+<wsdl:operation name="LinkToTestingDocumentation">
+<wsdl:input message="tns:LinkToTestingDocumentationSoapIn"/>
+<wsdl:output message="tns:LinkToTestingDocumentationSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="ListTestAccounts">
+<wsdl:input message="tns:ListTestAccountsSoapIn"/>
+<wsdl:output message="tns:ListTestAccountsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="IsValidCustomer">
+<wsdl:input message="tns:IsValidCustomerSoapIn"/>
+<wsdl:output message="tns:IsValidCustomerSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="GetCustomerAccounts">
+<wsdl:input message="tns:GetCustomerAccountsSoapIn"/>
+<wsdl:output message="tns:GetCustomerAccountsSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="CloseAccount">
+<wsdl:input message="tns:CloseAccountSoapIn"/>
+<wsdl:output message="tns:CloseAccountSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddAccount">
+<wsdl:input message="tns:AddAccountSoapIn"/>
+<wsdl:output message="tns:AddAccountSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="InternalFundsTransfer">
+<wsdl:input message="tns:InternalFundsTransferSoapIn"/>
+<wsdl:output message="tns:InternalFundsTransferSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="AddCustomerRecord">
+<wsdl:input message="tns:AddCustomerRecordSoapIn"/>
+<wsdl:output message="tns:AddCustomerRecordSoapOut"/>
+</wsdl:operation>
+<wsdl:operation name="CustomerSearch">
+<wsdl:input message="tns:CustomerSearchSoapIn"/>
+<wsdl:output message="tns:CustomerSearchSoapOut"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="LinkToTestingDocumentation">
+<soap:operation soapAction="http://www.hp.com/asc/zerows/LinkToTestingDocumentation" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ListTestAccounts">
+<soap:operation soapAction="http://www.hp.com/asc/zerows/ListTestAccounts" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="IsValidCustomer">
+<soap:operation soapAction="http://www.hp.com/asc/zerows/IsValidCustomer" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCustomerAccounts">
+<soap:operation soapAction="http://www.hp.com/asc/zerows/GetCustomerAccounts" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CloseAccount">
+<soap:operation soapAction="http://www.hp.com/asc/zerows/CloseAccount" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddAccount">
+<soap:operation soapAction="http://www.hp.com/asc/zerows/AddAccount" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="InternalFundsTransfer">
+<soap:operation soapAction="http://www.hp.com/asc/zerows/InternalFundsTransfer" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddCustomerRecord">
+<soap:operation soapAction="http://www.hp.com/asc/zerows/AddCustomerRecord" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CustomerSearch">
+<soap:operation soapAction="http://www.hp.com/asc/zerows/CustomerSearch" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="WebServiceSoap12" type="tns:WebServiceSoap">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="LinkToTestingDocumentation">
+<soap12:operation soapAction="http://www.hp.com/asc/zerows/LinkToTestingDocumentation" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="ListTestAccounts">
+<soap12:operation soapAction="http://www.hp.com/asc/zerows/ListTestAccounts" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="IsValidCustomer">
+<soap12:operation soapAction="http://www.hp.com/asc/zerows/IsValidCustomer" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="GetCustomerAccounts">
+<soap12:operation soapAction="http://www.hp.com/asc/zerows/GetCustomerAccounts" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CloseAccount">
+<soap12:operation soapAction="http://www.hp.com/asc/zerows/CloseAccount" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddAccount">
+<soap12:operation soapAction="http://www.hp.com/asc/zerows/AddAccount" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="InternalFundsTransfer">
+<soap12:operation soapAction="http://www.hp.com/asc/zerows/InternalFundsTransfer" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="AddCustomerRecord">
+<soap12:operation soapAction="http://www.hp.com/asc/zerows/AddCustomerRecord" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="CustomerSearch">
+<soap12:operation soapAction="http://www.hp.com/asc/zerows/CustomerSearch" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="WebService">
+<wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+<soap:address location="http://legacy.webappsecurity.com/CustomerAccounts/WebService.asmx"/>
+</wsdl:port>
+<wsdl:port name="WebServiceSoap12" binding="tns:WebServiceSoap12">
+<soap12:address location="http://legacy.webappsecurity.com/CustomerAccounts/WebService.asmx"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

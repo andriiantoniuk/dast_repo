@@ -1,0 +1,23 @@
+{
+  "APIDefinition": "http://172.16.10.170:8080/graphql",
+  "Schemes": [
+    "http"
+  ],
+  "Host": "172.16.10.170:8080",
+  "ServicePath": "/graphql",
+  "ParameterRules": [
+    {
+      "Name": "id",
+      "Value": "101",
+      "Location": "Body",
+      "Type": "Number",
+      "IncludeOperations": [
+        "comment"
+      ],
+      "ExcludeOperations": null,
+      "Inject": false,
+      "Base64Decode": false
+    }
+  ],
+  "Type": "GraphQL"
+}

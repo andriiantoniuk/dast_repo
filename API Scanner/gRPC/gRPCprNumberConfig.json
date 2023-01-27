@@ -1,0 +1,15 @@
+{
+  "APIDefinition": "syntax = \"proto3\";\npackage catalogpb;\noption go_package=\"./;catalogpb\";\n\n\nmessage CatalogItem{\n    string id = 1;\n    string name = 2;\n    string details = 3;\n    string availability = 4;\n    int64 total_orders = 5;\n    int64 average_cost = 6;\n}\n\nmessage GetItemsRequest {\n}\n\nmessage GetItemsResponse {\n    repeated CatalogItem item = 1;\n}\n\nmessage GetItemRequest {\n    string id = 1;\n}\n\nmessage GetItemResponse {\n    CatalogItem item = 1;\n}\n\nmessage UpdateItemRequest {\n    string id = 1;\n    int64 latest_cost = 2;\n}\n\nmessage UpdateItemResponse {\n}\n\nservice Catalog{\n    rpc GetItem(GetItemRequest) returns (GetItemResponse) {};\n    rpc GetItems(GetItemsRequest) returns (GetItemsResponse) {};\n    rpc UpdateItem(UpdateItemRequest) returns (UpdateItemResponse) {};\n}",
+  "Type": "gRPC",
+  "Schemes": [ "https" ],
+  "Host": "172.16.10.82:55050",
+  "ServicePath" : "/",
+  "ParameterRules": [
+    {
+      "Name": "latest_cost",
+      "Value": "101",
+      "Location": "Body",
+      "Type": "Number"
+    }
+  ]
+}

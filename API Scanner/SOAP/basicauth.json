@@ -1,0 +1,15 @@
+{
+	"APIDefinition": "http://172.16.10.161:9010/SOAPBasicAuth/calculator.asmx?WSDL",
+	"Type": "SOAP",
+	"Schemes": [ "http" ],
+	"Host": "172.16.10.161:9010",
+	"ServicePath" : "/SOAPBasicAuth/calculator.asmx",
+	"APIVersion": "Newest",
+	"AuthProviders": [
+		{
+		"Type": "TRANSPORT_BASIC",
+		"Username": "administrator",
+		"Password": "SPI!password"
+		}
+	]
+}

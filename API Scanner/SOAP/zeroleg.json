@@ -1,0 +1,7 @@
+{
+	"APIDefinition": "http://legacy.webappsecurity.com/CustomerAccounts/WebService.asmx?wsdl",
+	"Type": "SOAP",
+	"Schemes": [ "http" ],
+	"Host": "http://legacy.webappsecurity.com:80",
+	"servicePath": "/CustomerAccounts/WebService.asmx"
+}
